@@ -1,15 +1,17 @@
-import { Home } from './pages/Home';
-
+import { TaskContextProvider } from './contexts/TaskContext/taskContextProvider';
+import { MessagesContainer } from './components/MessagesContainer';
 import './styles/theme.css';
 import './styles/Global.css';
-import { NotFound } from './pages/NotFound';
-import { AboutPomodoro } from './pages/AboutPomodoro';
-
+import { MainRouter } from './routers/MainRouter';
 
 export function App() {
   return (
     <>
-      <Home />
+      <TaskContextProvider>
+        <MessagesContainer>
+        <MainRouter />
+        </MessagesContainer>
+      </TaskContextProvider>
     </>
   );
 }
